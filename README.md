@@ -30,8 +30,8 @@ To run the application, ensure the [prerequisites](#prerequisites) are met then 
 1. Clone the project `git clone https://github.com/EyoElijah/mtn-assessment.git`,
 2. Navigate to the project root directory `cd mtn-assessment`
 3. Execute the command `npm install` to install all project dependencies
-4. Create a `.env` file by executing `cp .env.example .env` while in the project root directory
-5. Update the `.env` file with the appropriate values for the environment variables. see the [.env.example](.env.sample) for detailed instruction
+4. Create a `.env` file by executing `cp .env.sample .env` while in the project root directory
+5. Update the `.env` file with the appropriate values for the environment variables. see the [.env.sample](.env.sample) for detailed instruction
 
 ## Usage
 
