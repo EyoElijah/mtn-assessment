@@ -35,7 +35,7 @@ To run the application, ensure the [prerequisites](#prerequisites) are met then 
 
 ## Usage
 
-To use the project, set up the [prerequisite](#prerequisites) and follow the [installation](#installation) guide, afterward, consult the commands below for instructions on where to go next
+To use the project, set up the [prerequisite](#prerequisites) and follow the [Getting Started](#getting-started) guide, afterward, consult the commands below for instructions on where to go next
 
 - execute `npm run start:dev` to run the application in development mode
 - execute `npm run start:prod` to run the application optimized for the production environment
