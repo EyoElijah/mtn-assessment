@@ -38,11 +38,11 @@ import {
 
 @ApiTags('Todo-List')
 @ApiBearerAuth()
+@UseGuards(AuthGuard)
 @Controller('todo-list')
 export class TodoListController {
   constructor(private readonly todoListService: TodoListService) {}
 
-  @UseGuards(AuthGuard)
   @Post('/')
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({
@@ -59,7 +59,6 @@ export class TodoListController {
     return this.todoListService.createTodo(createTodoListDto, req.user);
   }
 
-  @UseGuards(AuthGuard)
   @Get('/')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
@@ -76,7 +75,6 @@ export class TodoListController {
     return this.todoListService.getAllTodos(req.user, queryParamsDto);
   }
 
-  @UseGuards(AuthGuard)
   @Get(':todoId')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
@@ -93,7 +91,6 @@ export class TodoListController {
     return this.todoListService.getSingleTodo(todoId, req.user);
   }
 
-  @UseGuards(AuthGuard)
   @Patch(':todoId')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
@@ -111,7 +108,6 @@ export class TodoListController {
     return this.todoListService.updateTodo(todoId, updateTodoListDto, req.user);
   }
 
-  @UseGuards(AuthGuard)
   @Delete(':todoId')
   @ApiOperation({
     summary: 'Delete a todo list',

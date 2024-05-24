@@ -43,7 +43,7 @@ export class Task {
 
   @ManyToOne(() => TodoList, ({ tasks }) => tasks)
   @JoinColumn()
-  todoList?: TodoList;
+  todoList: TodoList;
 
   @ApiProperty()
   @CreateDateColumn({ type: 'timestamp' })

@@ -37,11 +37,11 @@ import {
 
 @ApiTags('Tasks')
 @ApiBearerAuth()
+@UseGuards(AuthGuard)
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
-  @UseGuards(AuthGuard)
   @Post('/')
   @ApiOperation({
     summary: 'Creates a new task',
@@ -55,7 +55,6 @@ export class TasksController {
     return this.tasksService.createTask(createTaskDto, req.user);
   }
 
-  @UseGuards(AuthGuard)
   @Get('/todo/:todoId')
   @ApiOperation({
     summary: 'Retrieves all tasks in a particular todo',
@@ -81,7 +80,6 @@ export class TasksController {
       });
   }
 
-  @UseGuards(AuthGuard)
   @Get(':taskId')
   @ApiOperation({
     summary: 'Retrieve a task',
@@ -103,7 +101,6 @@ export class TasksController {
     });
   }
 
-  @UseGuards(AuthGuard)
   @Patch(':taskId')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
@@ -121,7 +118,6 @@ export class TasksController {
     return this.tasksService.updateTask(taskId, updateTaskDto, req.user);
   }
 
-  @UseGuards(AuthGuard)
   @Delete(':taskId')
   @ApiOperation({
     summary: 'Delete a task',

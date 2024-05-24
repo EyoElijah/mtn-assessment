@@ -32,10 +32,10 @@ export class TodoList {
 
   @ManyToOne(() => User, ({ todoList }) => todoList)
   @JoinColumn()
-  user?: User;
+  user: User;
 
   @OneToMany(() => Task, ({ todoList }) => todoList)
-  tasks?: Task[];
+  tasks: Task[];
 
   @ApiProperty()
   @CreateDateColumn({ type: 'timestamp' })

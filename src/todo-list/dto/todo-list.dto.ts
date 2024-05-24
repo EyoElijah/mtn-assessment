@@ -1,15 +1,17 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsIn, IsOptional, IsString } from 'class-validator';
+import { IsIn, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateTodoListDto {
   @ApiProperty({ description: 'todo list name', example: 'My First Todo' })
   @IsString({ message: 'name must be a string' })
+  @IsNotEmpty({ message: 'provide a todo name' })
   name: string;
 }
 
 export class UpdateTodoListDto {
   @ApiProperty({ description: 'todo list name', example: 'My First Todo' })
   @IsString({ message: 'name must be a string' })
+  @IsNotEmpty({ message: 'provide a todo name' })
   name: string;
 }
 

@@ -2,6 +2,7 @@ import {
   IsDateString,
   IsEnum,
   IsIn,
+  IsNotEmpty,
   IsOptional,
   IsString,
   IsUUID,
@@ -15,6 +16,7 @@ export class CreateTaskDto {
     example: 'a7228feb-c0e6-4001-a98c-18b3a18338fe',
   })
   @IsUUID(4, { message: 'todoId must be a valid UUID' })
+  @IsNotEmpty({ message: 'provide a todoId' })
   todoId: string;
 
   @ApiProperty({
@@ -41,6 +43,7 @@ export class UpdateTaskDto {
     example: 'a7228feb-c0e6-4001-a98c-18b3a18338fe',
   })
   @IsUUID(4, { message: 'todoId must be a valid UUID' })
+  @IsNotEmpty({ message: 'provide a todo id' })
   todoId: string;
 
   @ApiProperty({
