@@ -45,8 +45,8 @@ export class TodoListService {
       delete todo.user;
 
       return {
-        message: 'Todo created successfully',
         success: true,
+        message: 'Todo created successfully',
         data: todo,
       };
     } catch (error) {
@@ -92,8 +92,8 @@ export class TodoListService {
       const [todos, count] = await this.todoListRepo.findAndCount(queryOptions);
 
       return {
-        message: 'Todos retrieved successfully',
         success: true,
+        message: 'Todos retrieved successfully',
         data: todos,
         page: perPage,
         limit: pageLimit,
@@ -120,8 +120,8 @@ export class TodoListService {
         throw new HttpException('todo not found', HttpStatus.NOT_FOUND);
       }
       return {
-        message: 'Todo retrieved successfully',
         success: true,
+        message: 'Todo retrieved successfully',
         data: todo,
       };
     } catch (error) {
@@ -162,8 +162,8 @@ export class TodoListService {
       await this.todoListRepo.save(todo);
 
       return {
-        message: 'Todo updated successfully',
         success: true,
+        message: 'Todo updated successfully',
         data: todo,
       };
     } catch (error) {
@@ -194,8 +194,8 @@ export class TodoListService {
       await this.todoListRepo.remove(todo);
 
       return {
-        message: 'Todo deleted successfully',
         success: true,
+        message: 'Todo deleted successfully',
       };
     } catch (error) {
       logger.error(error).console();

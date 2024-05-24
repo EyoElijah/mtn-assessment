@@ -58,8 +58,8 @@ export class AuthService {
       await this.userRepository.save(user);
 
       return {
-        message: 'Account created successfully',
         success: true,
+        message: 'Account created successfully',
         accessToken,
         refreshToken,
       };
@@ -119,8 +119,8 @@ export class AuthService {
       delete user.password;
 
       return {
-        message: 'Account login successful',
         success: true,
+        message: 'Account login successful',
         user,
       };
     } catch (error) {
@@ -144,8 +144,8 @@ export class AuthService {
         Object.assign(user, { accessToken: '', refreshToken: '' }),
       );
       return {
-        message: 'Account logout successful',
         success: true,
+        message: 'Account logout successful',
       };
     } catch (error) {
       throw new InternalServerErrorException('logout error');

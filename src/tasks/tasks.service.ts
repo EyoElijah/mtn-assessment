@@ -47,8 +47,8 @@ export class TasksService {
       });
 
       return {
-        message: 'Task created successfully',
         success: true,
+        message: 'Task created successfully',
         task,
       };
     } catch (error) {
@@ -108,8 +108,8 @@ export class TasksService {
       const [tasks, count] = await this.taskRepo.findAndCount(queryOptions);
 
       return {
-        message: 'Tasks retrieved successfully',
         success: true,
+        message: 'Tasks retrieved successfully',
         data: tasks,
         page: perPage,
         limit: pageLimit,
@@ -142,8 +142,8 @@ export class TasksService {
       }
 
       return {
-        message: 'Task retrieved successfully',
         success: true,
+        message: 'Task retrieved successfully',
         data: task,
       };
     } catch (error) {
@@ -189,8 +189,8 @@ export class TasksService {
       });
 
       return {
-        message: 'Task updated successfully',
         success: true,
+        message: 'Task updated successfully',
         updatedTask,
       };
     } catch (error) {
@@ -213,8 +213,8 @@ export class TasksService {
       await this.taskRepo.softDelete(task.id);
 
       return {
-        message: 'Task deleted successfully',
         success: true,
+        message: 'Task deleted successfully',
       };
     } catch (error) {
       logger.error(error).console();
