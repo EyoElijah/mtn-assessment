@@ -47,7 +47,7 @@ export class TodoListService {
       return {
         message: 'Todo created successfully',
         success: true,
-        todo,
+        data: todo,
       };
     } catch (error) {
       logger.error(error).console();
@@ -94,7 +94,7 @@ export class TodoListService {
       return {
         message: 'Todos retrieved successfully',
         success: true,
-        todos,
+        data: todos,
         page: perPage,
         limit: pageLimit,
         total: count,
@@ -122,7 +122,7 @@ export class TodoListService {
       return {
         message: 'Todo retrieved successfully',
         success: true,
-        todo,
+        data: todo,
       };
     } catch (error) {
       logger.error(error).console();
@@ -164,7 +164,7 @@ export class TodoListService {
       return {
         message: 'Todo updated successfully',
         success: true,
-        todo,
+        data: todo,
       };
     } catch (error) {
       logger.error(error).console();

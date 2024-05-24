@@ -19,7 +19,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { LogoutRespone, RegisterRespone } from './response/auth.response';
+import { LogoutResponse, RegisterResponse } from './response/auth.response';
 import { User } from '../entities/user.entity';
 
 @ApiTags('Auth')
@@ -34,7 +34,7 @@ export class AuthController {
   })
   @ApiCreatedResponse({
     status: HttpStatus.CREATED,
-    type: () => RegisterRespone,
+    type: () => RegisterResponse,
   })
   @ApiBadRequestResponse({ description: 'User registeration failed' })
   @HttpCode(HttpStatus.CREATED)
@@ -65,7 +65,7 @@ export class AuthController {
   })
   @ApiOkResponse({
     status: HttpStatus.OK,
-    type: () => LogoutRespone,
+    type: () => LogoutResponse,
   })
   @HttpCode(HttpStatus.OK)
   async logout(@Req() req: Request) {

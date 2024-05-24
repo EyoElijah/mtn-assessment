@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class RegisterRespone {
+export class RegisterResponse {
   @ApiProperty({
     type: String,
   })
@@ -21,7 +21,7 @@ export class RegisterRespone {
   refreshToken: string;
 }
 
-export class LogoutRespone {
+export class LogoutResponse {
   @ApiProperty({
     type: String,
   })

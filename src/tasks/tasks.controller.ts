@@ -72,11 +72,11 @@ export class TasksController {
     return this.tasksService
       .getAllTasks(todoId, req.user, queryParamDto)
       .then((result) => {
-        const tasksWithStatusColor = result.tasks.map((task) => ({
+        const tasksWithStatusColor = result.data.map((task) => ({
           ...task,
           statusColor: this.tasksService.getTaskStatusColor(task),
         }));
-        return { ...result, tasks: tasksWithStatusColor };
+        return { ...result, data: tasksWithStatusColor };
       });
   }
 
@@ -94,8 +94,8 @@ export class TasksController {
     @Param('taskId', ParseUUIDPipe) taskId: string,
   ) {
     return this.tasksService.getTask(taskId, req.user).then((result) => {
-      result.task.statusColor = this.tasksService.getTaskStatusColor(
-        result.task,
+      result.data.statusColor = this.tasksService.getTaskStatusColor(
+        result.data,
       );
       return result;
     });

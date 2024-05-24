@@ -14,7 +14,7 @@ import { User } from '../entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TodoList } from '../entities/todo-list.entity';
 import { FindManyOptions, In, Like, Repository } from 'typeorm';
-import { Task, TaskStatus } from '../entities/tasks.entity';
+import { Task } from '../entities/tasks.entity';
 
 @Injectable()
 export class TasksService {
@@ -110,7 +110,7 @@ export class TasksService {
       return {
         message: 'Tasks retrieved successfully',
         success: true,
-        tasks,
+        data: tasks,
         page: perPage,
         limit: pageLimit,
         total: count,
@@ -144,7 +144,7 @@ export class TasksService {
       return {
         message: 'Task retrieved successfully',
         success: true,
-        task,
+        data: task,
       };
     } catch (error) {
       logger.error(error).console();
