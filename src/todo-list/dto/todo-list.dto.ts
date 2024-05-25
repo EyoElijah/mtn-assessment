@@ -21,14 +21,14 @@ export class TodoListQueryParameterDto {
     required: false,
   })
   @IsOptional()
-  page?: number;
+  page: number;
 
   @ApiProperty({
     type: Number,
     required: false,
   })
   @IsOptional()
-  limit?: number;
+  limit: number;
 
   @ApiProperty({
     type: String,
@@ -38,7 +38,7 @@ export class TodoListQueryParameterDto {
   })
   @IsOptional()
   @IsIn(['createdAt', 'updatedAt', 'name'])
-  sortBy?: string;
+  sortBy: string;
 
   @ApiProperty({
     type: String,
@@ -48,12 +48,13 @@ export class TodoListQueryParameterDto {
   })
   @IsOptional()
   @IsIn(['ASC', 'DESC'])
-  sortOrder?: string;
+  @IsOptional()
+  sortOrder: string;
 
   @ApiProperty({
     type: String,
     required: false,
   })
   @IsOptional()
-  search?: string;
+  search: string;
 }

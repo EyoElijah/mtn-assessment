@@ -81,14 +81,14 @@ export class TaskQueryParameterDto {
     required: false,
   })
   @IsOptional()
-  page?: number;
+  page: number;
 
   @ApiProperty({
     type: Number,
     required: false,
   })
   @IsOptional()
-  limit?: number;
+  limit: number;
 
   @ApiProperty({
     type: String,
@@ -98,7 +98,7 @@ export class TaskQueryParameterDto {
   })
   @IsOptional()
   @IsIn(['createdAt', 'updatedAt', 'status', 'statusColor'])
-  sortBy?: string;
+  sortBy: string;
 
   @ApiProperty({
     type: String,
@@ -108,12 +108,12 @@ export class TaskQueryParameterDto {
   })
   @IsOptional()
   @IsIn(['ASC', 'DESC'])
-  sortOrder?: string;
+  sortOrder: string;
 
   @ApiProperty({
     type: String,
     required: false,
   })
   @IsOptional()
-  search?: string;
+  search: string;
 }
