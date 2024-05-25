@@ -28,8 +28,10 @@ export class AuthService {
   async register(registerUserDto: RegisterDto): Promise<{
     message: string;
     success: boolean;
-    accessToken: string;
-    refreshToken: string;
+    data: {
+      accessToken: string;
+      refreshToken: string;
+    };
   }> {
     try {
       const { email, firstName, lastName, password } = registerUserDto;
@@ -60,8 +62,7 @@ export class AuthService {
       return {
         success: true,
         message: 'Account created successfully',
-        accessToken,
-        refreshToken,
+        data: { accessToken, refreshToken },
       };
     } catch (error) {
       Logger.error(error).console();
@@ -81,7 +82,7 @@ export class AuthService {
   async login(loginUserDto: LoginDto): Promise<{
     message: string;
     success: boolean;
-    user: User;
+    data: User;
   }> {
     try {
       const { email, password } = loginUserDto;
@@ -121,7 +122,7 @@ export class AuthService {
       return {
         success: true,
         message: 'Account login successful',
-        user,
+        data: user,
       };
     } catch (error) {
       Logger.error(error).console();
