@@ -237,7 +237,7 @@ export class TodoListService {
    */
   private async foundTodo(todoId: string, user: User): Promise<TodoList> {
     try {
-      const todo = await this.todoListRepo.findOne({
+      return await this.todoListRepo.findOne({
         where: {
           id: todoId,
           user: {
@@ -245,8 +245,6 @@ export class TodoListService {
           },
         },
       });
-
-      return todo;
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
