@@ -46,10 +46,12 @@ export class TasksService {
         todoList: foundTodoList,
       });
 
+      delete task.todoList;
+
       return {
         success: true,
         message: 'Task created successfully',
-        task,
+        data: task,
       };
     } catch (error) {
       logger.error(error).console();
@@ -188,10 +190,12 @@ export class TasksService {
         todoList: foundTodo,
       });
 
+      delete updatedTask.todoList;
+
       return {
         success: true,
         message: 'Task updated successfully',
-        updatedTask,
+        data: updatedTask,
       };
     } catch (error) {
       logger.error(error).console();
