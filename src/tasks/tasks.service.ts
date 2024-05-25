@@ -233,7 +233,7 @@ export class TasksService {
    */
   private async foundTodo(todoId: string, user: User): Promise<TodoList> {
     try {
-      const todo = await this.todoListRepo.findOne({
+      return await this.todoListRepo.findOne({
         where: {
           id: todoId,
           user: {
@@ -241,8 +241,6 @@ export class TasksService {
           },
         },
       });
-
-      return todo;
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -257,7 +255,7 @@ export class TasksService {
    */
   private async foundTask(taskId: string, user: User): Promise<Task> {
     try {
-      const todo = await this.taskRepo.findOne({
+      return await this.taskRepo.findOne({
         where: {
           id: taskId,
           todoList: {
@@ -267,8 +265,6 @@ export class TasksService {
           },
         },
       });
-
-      return todo;
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
